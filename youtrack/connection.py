@@ -217,7 +217,7 @@ class Connection(object):
         return [youtrack.Attachment(e, self) for e in xml.documentElement.childNodes if e.nodeType == Node.ELEMENT_NODE]
 
     def getAttachmentContent(self, url):
-        f = urllib.request.urlopen(urllib.request.Request(self.url + url, headers=self.headers))
+        f = urllib.request.urlopen(urllib.request.Request(url, headers=self.headers))
         return f
 
     def deleteAttachment(self, issue_id, attachment_id):
